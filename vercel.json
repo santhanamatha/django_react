@@ -4,15 +4,24 @@
     {
       "src": "matha/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "60xmb", "runtime": "python3.9" }
+      "config": {
+        "maxLambdaSize": "60xmb",
+        "runtime": "python3.9"
+      }
     },
-    { "src": "package.json", "use": "@vercel/static-build" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "matha/wsgi.py"
     },
-    { "src": "/(.*)", "dest": "src/index.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
