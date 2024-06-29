@@ -14,20 +14,5 @@
       "dest": "matha/wsgi.py"
     },
     { "src": "/(.*)", "dest": "/index.html" }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "install-and-build": {
-      "runtime": "vercel/node@16",
-      "memory": 1024,
-      "maxDuration": 60,
-      "includeFiles": ["package.json", "package-lock.json"],
-      "buildCommand": "npm install && npm run build"
-    }
-  },
-  "hooks": {
-    "postinstall": "npm run build"
-  }
+  ]
 }
